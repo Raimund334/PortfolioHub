@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio - Ark Alexandra</title>
+  
+  <link rel="stylesheet" href="style.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      min-height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .portfolio {
+      max-width: 900px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      text-align: center;
+      color: #555;
+      font-size: 1.3rem;
+      margin-bottom: 40px;
+    }
+
+    .section {
+      margin: 50px 0;
+    }
+
+    h2 {
+      color: #667eea;
+      border-bottom: 3px solid #667eea;
+      padding-bottom: 10px;
+      margin-bottom: 25px;
+    }
+
+    .about {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .logout-btn {
+      display: block;
+      margin: 40px auto 0;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    .logout-btn:hover {
+      background: linear-gradient(135deg, #c0392b, #a93226);
+    }
+  </style>
+</head>
+<body>
+  <div class="portfolio">
+    <h1>Hi, I'm Raimund 👋</h1>
+    <p class="tagline">Student | Developer | Creative</p>
+
+    <!-- About Section -->
+    <div class="section">
+      <h2>About Me</h2>
+      <p class="about">
+        I love game development. Example:<br><br>
+        I'm a passionate student at Ark Alexandra with strong interests in web development, design, and technology. 
+        I enjoy creating beautiful and functional websites.
+      </p>
+    </div>
+
+    <!-- Projects / Portfolio Section -->
+    <div class="section">
+      <h2>My Projects</h2>
+      <div class="project-grid">
+        
+        <div class="project-card">
+          <h3>Making my portfolio webpage</h3>
+          <p>Building this website to showcase my skills and projects.</p>
+          <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
+        </div>
+
+        <div class="project-card">
+          <h3>Project 2 Title</h3>
+          <p>Short description of what you built and what you learned.</p>
+          <p><strong>Technologies:</strong> Python, Flask, SQLite</p>
+        </div>
+
+        <div class="project-card">
+          <h3>Project 3 Title</h3>
+          <p>Short description of what you built and what you learned.</p>
+          <p><strong>Technologies:</strong> React, Node.js</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- You can add more sections like Skills, Achievements, etc. -->
+
+    <button onclick="window.location.href='index.html'" class="logout-btn">
+      <i class='bx bx-log-out'></i> Logout
+    </button>
+  </div>
+</body>
+</html>

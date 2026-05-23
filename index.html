@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Hub(Raimund)</title>
+  
+  <link rel="stylesheet" href="style.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  
+  <style>
+    .error-message {
+      color: #e74c3c;
+      background: #ffebee;
+      padding: 12px;
+      border-radius: 8px;
+      margin: 15px 0;
+      display: none;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>portfolio Hub</h1>
+  
+  <div class="wrapper">
+    <form id="loginForm">
+      <h1>Login</h1>
+      
+      <div class="input-box">
+        <input type="text" id="username" placeholder="Username" required>
+        <i class='bx bxs-user-account'></i>
+      </div>
+      
+      <div class="input-box">
+        <input type="password" id="password" placeholder="Password" required>
+        <i class='bx bxs-lock-alt'></i>
+      </div>
+
+      <div class="remember-forget">
+        <label>
+          <input type="checkbox"> Remember me
+        </label>
+        <a href="#">Forgot password?</a>
+      </div>
+
+      <div id="errorMsg" class="error-message"></div>
+
+      <button type="submit" class="btn">Login</button>
+
+      <div class="register-links">
+        <p>Don't have an account? <a href="#">Register</a></p>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const errorMsg = document.getElementById('errorMsg');
+
+    // Change these to your private login details
+    const validUsername = "admin";      // ← Change this
+    const validPassword = "1234";       // ← Change this
+
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      errorMsg.style.display = "none";
+
+      if (username === "" || password === "") {
+        errorMsg.textContent = "Please enter both username and password!";
+        errorMsg.style.display = "block";
+        return;
+      }
+
+      if (username === validUsername && password === validPassword) {
+        window.location.href = "dashboard.html";
+      } else {
+        errorMsg.textContent = "❌ Incorrect username or password!";
+        errorMsg.style.display = "block";
+        document.getElementById('password').value = "";
+      }
+    });
+  </script>
+</body>
+</html>
