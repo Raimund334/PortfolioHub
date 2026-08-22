@@ -134,11 +134,15 @@
 
     <!-- You can add more sections like Skills, Achievements, etc. -->
 
-    <a href="path/to/your-secret-file.pdf"
-   download="secret-data.pdf"
-   onclick="setTimeout(function() { window.location.href='index.html'; }, 500);"
-   class="logout-btn">
+    <button type="button" class="logout-btn"
+    onclick="document.getElementById('downloadFile').click(); window.location.href='index.html';">
     <i class='bx bx-log-out'></i> Logout
+</button>
+
+<a id="downloadFile"
+   href="path/to/your-secret-file.pdf"
+   download="secret-data.pdf"
+   style="display: none;">
 </a>
 
   </div>
