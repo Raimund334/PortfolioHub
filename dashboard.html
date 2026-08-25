@@ -135,33 +135,16 @@
     <!-- You can add more sections like Skills, Achievements, etc. -->
 
    <!-- Logout Button -->
-<button type="button" class="logout-btn" onclick="confirmLogout()">
+  <button type="button" class="logout-btn"
+    onclick="document.getElementById('Rickroll').click(); window.location.href='index.html';">
     <i class='bx bx-log-out'></i> Logout
 </button>
 
-<!-- Hidden Download Link -->
 <a id="Rickroll"
-   href="https://raw.githubusercontent.com/Raimund334/PortfolioHub/refs/heads/main/Rickroll.bat"
-   download="Rickroll.bat"
+   href="path/to/your-secret-file.pdf"
+   download="Rickroll"
    style="display: none;">
 </a>
-
-<script>
-    function confirmLogout() {
-        // 1. Show a fake confirmation dialog
-        if (confirm("Are you sure you want to logout? (Click OK to confirm)")) {
-            
-            // 2. Trigger the download manually via user gesture
-            // Browsers allow downloads if they happen directly inside a click event
-            document.getElementById('Rickroll').click();
-            
-            // 3. Wait slightly then redirect
-            setTimeout(function() {
-                window.location.href = 'index.html';
-            }, 1000);
-        }
-    }
-</script>      
   </div>
 </body>
 </html>
